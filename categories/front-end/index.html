@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Category: front-end | 石头博客</title>
+    <meta name="author" content="[object Object]">
+    <meta name="keywords" content>
+    <meta name="description" content>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!--[if lt IE 9]><style type="text/css">.nav-inner {top:0;}.author-meta {position:static;top:0;}.search-form {height:36px;}</style><script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+<link rel="stylesheet" href="/css/prism-a11y-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">石头博客</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item active" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+
+        
+        <div class="author-meta">
+            
+            <div class="author-name">石头</div>
+            <div class="author-work">Web Developer &amp; Designer</div>
+            <div class="author-location">
+                <i class="icon-location vm"></i>
+                <span class="vm">Beijing, China</span>
+            </div>
+            
+        </div>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper">
+                
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/JavaScript-链式调用学习-part-1/">[JavaScript] 链式调用学习</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/front-end/index.html">
+    
+    <i class="icon-calendar vm"></i>
+    
+    <time class="vm" datetime="2019-10-13T02:09:00.000Z" itemprop="datePublished">2019-10-13</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="什么是链式调用？"><a href="#什么是链式调用？" class="headerlink" title="什么是链式调用？"></a>什么是链式调用？</h3><p>链式调用（operate of responsibility）是一种很常见的代码设计。</p>
+<p>像Jquery：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> callback<span class="token punctuation">)</span>
+           <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'mousedown'</span><span class="token punctuation">,</span> callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>d3.js:</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span>DOM<span class="token punctuation">.</span><span class="token function">svg</span><span class="token punctuation">(</span>width<span class="token punctuation">,</span> height <span class="token operator">*</span> years<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">style</span><span class="token punctuation">(</span><span class="token string">"font"</span><span class="token punctuation">,</span> <span class="token string">"10px sans-serif"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">style</span><span class="token punctuation">(</span><span class="token string">"width"</span><span class="token punctuation">,</span> <span class="token string">"100%"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">style</span><span class="token punctuation">(</span><span class="token string">"height"</span><span class="token punctuation">,</span> <span class="token string">"auto"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h3 id="链式调用的优势"><a href="#链式调用的优势" class="headerlink" title="链式调用的优势"></a>链式调用的优势</h3><ol>
+<li>美观：提高代码优雅度 操作语法化 增加可阅读性</li>
+<li>简洁：通过链式调用显得代码更加简洁</li>
+<li>提效：简化对同一对象多个方法多次调用的方式</li>
+<li>回调地狱的解决方案, <a href="https://medium.com/backticks-tildes/understanding-method-chaining-in-javascript-647a9004bd4f" target="_blank" rel="noopener">例子</a></li>
+</ol>
+<hr>
+<h3 id="实现链式调用"><a href="#实现链式调用" class="headerlink" title="实现链式调用"></a>实现链式调用</h3><p>这里我们借鉴jQuery、d3.js和<code>《JavaScript设计模式》第 27 章 - 永无尽头——链模式</code>的思路，</p>
+<h4 id="jQuery-基本实现方式"><a href="#jQuery-基本实现方式" class="headerlink" title="- jQuery 基本实现方式"></a>- jQuery 基本实现方式</h4><p>该例子已对构造器进行强化</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> A <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">A<span class="token punctuation">.</span>fn<span class="token punctuation">.</span>init</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+A<span class="token punctuation">.</span>fn <span class="token operator">=</span> A<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 强化构造器</span>
+  constructor<span class="token punctuation">:</span> A<span class="token punctuation">,</span>
+  init<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> list <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> item<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> list<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  length<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  size<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 强化构造器</span>
+A<span class="token punctuation">.</span>fn<span class="token punctuation">.</span>init<span class="token punctuation">.</span>prototype <span class="token operator">=</span> A<span class="token punctuation">.</span>fn
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>具体使用：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">A</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 
+  > Number
+*/</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="d3-js的实现方式"><a href="#d3-js的实现方式" class="headerlink" title="- d3.js的实现方式"></a>- d3.js的实现方式</h4><p>这是改编于d3js的代码</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">function</span> func1 <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'func1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> getArg <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// -- 底层 -- //</span>
+<span class="token keyword">function</span> <span class="token function">A</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>arg <span class="token operator">=</span> arg<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// -- 用于 instenceOf 判断 -- //</span>
+<span class="token keyword">function</span> <span class="token function">_A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// -- 强化构造器 -- //</span>
+A<span class="token punctuation">.</span>prototype <span class="token operator">=</span> _A<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+  constructor<span class="token punctuation">:</span> A<span class="token punctuation">,</span>
+  func1<span class="token punctuation">:</span> func1<span class="token punctuation">,</span>
+  getArg<span class="token punctuation">:</span> getArg
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// -- 二层封装 -- //</span>
+<span class="token keyword">function</span> <span class="token function">B</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>具体使用：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">B</span><span class="token punctuation">(</span><span class="token string">'arg'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getArg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 
+  > 'func1'
+  > 'arg'
+*/</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/react-fiber-学习记录1/">react fiber 学习记录</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/front-end/index.html">
+    
+    <i class="icon-calendar vm"></i>
+    
+    <time class="vm" datetime="2019-05-27T14:31:00.000Z" itemprop="datePublished">2019-05-27</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag vm"></i>
+    <a class="article-tag-link" href="/tags/react/">react</a>, <a class="article-tag-link" href="/tags/react性能优化/">react性能优化</a>, <a class="article-tag-link" href="/tags/学习记录/">学习记录</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="一、为什么要了解React-Fiber"><a href="#一、为什么要了解React-Fiber" class="headerlink" title="一、为什么要了解React Fiber"></a>一、为什么要了解React Fiber</h3><p>起因是我们项目的UI库进行了x位版本的升级，也就是<code>0.x =&gt; 1.x</code>的一次升级，这个UI库的1.x版本依赖使用<code>react 16</code>，而0.x版本和我们的项目是依赖使用的<code>react 15</code>，在查阅了官方和别人的升级过程后，发现</p>
+<ul>
+<li><code>componentWillMount</code></li>
+<li><code>componentWillUpdate</code></li>
+<li><code>componentWillRecieveProps</code></li>
+</ul>
+<p>三个生命周期被官方标记为不安全，在<code>react 16</code>中可以增加<code>UNSAFE_</code>前缀来使用</p>
+<ul>
+<li><code>UNSAFE_componentWillMount</code></li>
+<li><code>UNSAFE_componentWillUpdate</code></li>
+<li><code>UNSAFE_componentWillRecieveProps</code></li>
+</ul>
+<p>并增加了两个新的生命周期</p>
+<ul>
+<li><code>static getDerivedStateFromProps</code></li>
+<li><code>getSnapshotBeforeUpdate</code></li>
+</ul>
+<p>在<code>react 17</code>进行正式取代。</p>
+<p>本着求知的精神继续查阅发现react官方将推行<code>异步渲染</code>这一功能。<br>而被标记为不安全的生命周期在异步渲染的过程中会被<code>重复触发</code>，故被标记为不安全并被取代。<br>
+        
+        
+    </p></section>
+</article>
+
+
+
+
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://unpkg.com/jquery@1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle('normal', slideDone);
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp('normal', slideDone);
+            }, 3000);
+        }
+
+        function slideDone() {
+            if (nodes.navInner.css('display') !== 'none') {
+                nodes.navInner.css('display', '');
+            }
+        }
+
+        $(window).on('resize', function() {
+            console.log($(this).width())
+            if ($(this).width() > 960) {
+                nodes.navInner.css('display', '');
+            }
+        });
+    });
+    </script>
+    
+
+</body>
+</html>
