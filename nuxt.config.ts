@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 
   site: {
     url: seoData.mySite,
-    name: '发呆的石头',
+    name: '石头博客',
   },
 
   typescript: {
