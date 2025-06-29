@@ -59,6 +59,10 @@ export default defineNuxtConfig({
     fallback: 'light',
   },
 
+  image: {
+    dir: 'public',
+  },
+
   content: {
     build: {
       markdown: {
